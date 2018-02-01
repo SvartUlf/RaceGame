@@ -13,6 +13,7 @@ public class RoadController : MonoBehaviour {
     private float _camWidth;
     private int _numberOfTiles;
     private float _tileHeight;
+    private float _tileWidth;
 
      
 
@@ -22,12 +23,15 @@ public class RoadController : MonoBehaviour {
 	// Use this for initialization
     void Start () {
 
+
+
         _camera = GameObject.FindObjectOfType<Camera>();
         _camHeight = _camera.orthographicSize;
         _camWidth = _camHeight * _camera.aspect;
         _tileHeight = roadTile.GetComponent<BoxCollider2D>().size.y;
+        _tileWidth = roadTile.GetComponent<BoxCollider2D>().size.y;
 
-        _numberOfTiles = Mathf.RoundToInt(_camHeight * 2 / _tileHeight) + 2;
+        _numberOfTiles = Mathf.RoundToInt(_camHeight * 2 / _tileHeight) + 5;
         _tiles = RoadGenerator();
 
 	}
@@ -61,7 +65,7 @@ public class RoadController : MonoBehaviour {
 
     private GameObject[] RoadGenerator(){
 
-        float tileStartPositionX = _camera.transform.position.x - _camWidth;
+        float tileStartPositionX = _camera.transform.position.x;
         float tileStartPositionY = _camera.transform.position.y - _camHeight - _tileHeight;
         float nextPositionY = tileStartPositionY;
 
