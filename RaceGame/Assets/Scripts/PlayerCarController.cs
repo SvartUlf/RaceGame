@@ -6,7 +6,7 @@ public class PlayerCarController : MonoBehaviour {
 
 	// Use this for initialization
 	ILogger logger = Debug.unityLogger;
-	private float _scale = 0.01f;
+	private float _scale = 0.008f;
 	private float _speedY = 0.05f;
 	private float _speedX = 0.0f;
 	private float _speedXMultiplier = 3.0f;
