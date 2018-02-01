@@ -41,7 +41,6 @@ public class RoadController : MonoBehaviour {
 
     void TileMove(){
         GameObject highestTile = _tiles[0];
-        Vector3 newPosition = new Vector3(0, 0, 0);
 
         foreach (GameObject tile in _tiles)
         {
@@ -62,7 +61,7 @@ public class RoadController : MonoBehaviour {
 
     private GameObject[] RoadGenerator(){
 
-        float tileStartPositionX = _camera.transform.position.x;
+        float tileStartPositionX = _camera.transform.position.x - _camWidth;
         float tileStartPositionY = _camera.transform.position.y - _camHeight - _tileHeight;
         float nextPositionY = tileStartPositionY;
 
